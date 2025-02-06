@@ -325,11 +325,7 @@ func (f filler) setMap(field reflect.Value, node *Node) error {
 
 	if field.Type().Elem().Kind() == reflect.String {
 		for _, child := range node.Children {
-			if len(child.Children) > 0 {
-				f.fillRecursively(child.Name, child, field)
-			} else {
-				field.SetMapIndex(reflect.ValueOf(child.Name), reflect.ValueOf(child.Value))
-			}
+			f.fillRecursively(child.Name, child, field)
 		}
 
 		return nil
