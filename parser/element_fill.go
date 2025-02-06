@@ -330,7 +330,6 @@ func (f filler) setMap(field reflect.Value, node *Node) error {
 			} else {
 				field.SetMapIndex(reflect.ValueOf(child.Name), reflect.ValueOf(child.Value))
 			}
-
 		}
 
 		return nil
